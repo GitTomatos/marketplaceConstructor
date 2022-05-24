@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block headData %}
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+    {% endblock %}
+
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('qwe') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('qwe') }}
+    {% endblock %}
+</head>
+
+<body>
+{% block body %}
+{% endblock %}
+</body>
+
+</html>

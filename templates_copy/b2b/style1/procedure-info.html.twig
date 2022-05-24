@@ -1,0 +1,113 @@
+{# https://www.roseltorg.ru/procedure/0373100113722000043 #}
+
+{% extends "base.html.twig" %}
+
+{% block headData %}
+    <meta charset="utf-8"/>
+    <meta name="Generator" content="Drupal 8 (https://www.drupal.org)"/>
+    <meta name="MobileOptimized" content="width"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width"/>
+
+    <title>Информация о процедуре</title>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('b2b_procedure_info') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('b2b_procedure_info') }}
+{% endblock %}
+
+
+{% block body %}
+    <main role="main" class="procedure-page">
+        <section class="description procedure-description">
+            <div class="content-wrapper procedure-description__wrapper">
+                <div class="description__heading">
+                    <h1 class="description__main-header main-header">Процедура: {{ purchase.getId }}</h1>
+                </div>
+                <table class="data-table data-table--header description__data-table description__data-table--header">
+                    <tr class="data-table__item">
+                        <td class="data-table__title-td">
+                            <span class="data-table__title">Наименование процедуры</span>
+                        </td>
+                        <td class="data-table__info-td">
+                            <p class="data-table__info">
+                                {{ purchase.getName }}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="description__data-table data-table" data-striping="1">
+                    <tbody>
+                    <tr class="data-table__item odd">
+                        <td class="data-table__title-td"><span class="data-table__title">Организатор</span></td>
+                        <td class="data-table__info-td">
+                            <p class="data-table__info">
+                                {{ purchase.getOrganizer.getName }}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="data-table__item even">
+                        <td class="data-table__title-td"><span class="data-table__title">Почтовый адрес</span></td>
+                        <td class="data-table__info-td"><p class="data-table__info">
+                                {{ purchase.getOrganizer.getPostalAddress}}
+                            </p></td>
+                    </tr>
+                    <tr class="data-table__item odd">
+                        <td class="data-table__title-td"><span class="data-table__title">Телефон</span></td>
+                        <td class="data-table__info-td">
+                            <p class="data-table__info">
+                                {{ purchase.getOrganizer.getPhoneNumber}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="data-table__item even">
+                        <td class="data-table__title-td"><span class="data-table__title">E-mail</span></td>
+                        <td class="data-table__info-td">
+                            <p class="data-table__info">
+                                {{ purchase.getOrganizer.getEmail}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr class="data-table__item odd">
+                        <td class="data-table__title-td"><span class="data-table__title">Способ проведения</span></td>
+                        <td class="data-table__info-td">
+                            <p class="data-table__info">
+                                {{ purchase.getCurrentTypeName}}
+                            </p>
+                        </td>
+                    </tr>
+{#                    <tr class="data-table__item even">#}
+{#                        <td class="data-table__title-td"><span class="data-table__title">Электронная площадка</span>#}
+{#                        </td>#}
+{#                        <td class="data-table__info-td"><p class="data-table__info">Государственные закупки (44-ФЗ), <a#}
+{#                                        href="https://etp.roseltorg.ru" target="_blank">etp.roseltorg.ru</a></p></td>#}
+{#                    </tr>#}
+{#                    <tr class="data-table__item odd">#}
+{#                        <td class="data-table__title-td"><span class="data-table__title">Дополнительные условия</span>#}
+{#                        </td>#}
+{#                        <td class="data-table__info-td"><p class="data-table__info">Для субъектов малого и среднего#}
+{#                                предпринимательства</p></td>#}
+{#                    </tr>#}
+                    </tbody>
+                </table>
+
+                <div class="description__action-bar">
+                    <a class="button button--large button--blue button--main-action" href="">
+                        Подать заявку
+                    </a>
+{#                    <a class="button button--large button--blue-white-opt" href="">#}
+{#                        Проверить заявку#}
+{#                    </a>#}
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}
+
+

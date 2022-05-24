@@ -1,0 +1,233 @@
+{% extends "base.html.twig" %}
+
+{% block headData %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>Initio - Free, multipurpose html5 template by GetTemplate</title>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('b2b_index') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('b2b_index') }}
+{% endblock %}
+
+
+
+{% block body %}
+    <main id="main">
+
+        <!-- Меню -->
+        <div class="menu">
+            <section>
+                <nav>
+                    <ul class="menuItems">
+                        <!--                    <li><a href='#' data-item='Home'>Home</a></li>-->
+                        <!--                    <li><a href='#' data-item='About'>About</a></li>-->
+                        <!--                    <li><a href='#' data-item='Projects'>Projects</a></li>-->
+                        <li><a href='#' data-item='Главная'>Главная</a></li>
+                        <li><a href='#' data-item='Личный кабинет'>Личный кабинет</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+        </div>
+
+        <!-- /Меню -->
+        <div class="container">
+
+            <div class="row section featured topspace">
+                <h2 class="section-title"><span>Services</span></h2>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 1</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 2</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 3</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 4</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 5</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3 class="text-center">Лот 6</h3>
+                        <p>Краткое описание лота</p>
+                        <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                    </div>
+                </div>
+            </div> <!-- / section -->
+
+        </div>    <!-- /container -->
+
+
+        <!-- Таблица с товарами -->
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+            <main role="main" class="search-page">
+                <section class="procedures-list">
+                    <div class="content-wrapper">
+                        <h1 class="main-header">Все процедуры</h1>
+                        <div data-drupal-messages-fallback class="hidden"></div>
+                        <div class="search-form">
+                            <form class="validate--form" action="/procedures/search_ajax" method="get"
+                                  id="form_procedures_search">
+                                <div class="search-form__sale" id="search-form__sale">
+                                    <div>
+                                        <span>
+                                            <label for="sale0" class="active-sale">Все
+                                            <input type="radio" id="sale0" name="sale" value="0" checked>
+                                            </label>
+                                        </span>
+                                        <span>
+                                            <label for="sale1">Закупки
+                                            <input type="radio" id="sale1" name="sale" value="1"/></label>
+                                        </span>
+                                        <span>
+                                            <label for="sale2">Продажи
+                                            <input type="radio" id="sale2" name="sale" value="2"/></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="search-form__searchpane">
+                                    <div class="search-form__searchfield"><i class="search-form__icon-search"></i>
+                                        <input class="search-form__keywordinput" name="query_field" type="text"
+                                               placeholder="Введите ключевое слово" value="">
+                                        <a rel="nofollow" class="search-form__btn-advanced-search" href="#"
+                                           onclick="ga('send', 'event', 'advancesearch', 'click')"> <i
+                                                    class="search-form__icon-advanced"></i> <span
+                                                    class="search-form__btn-advanced-text">Расширенный<br> поиск</span>
+                                        </a>
+                                    </div>
+                                    <div class="search-form__action">
+                                        <button class="button search-form__button-submit js-submit" type="button">
+                                            Найти
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="content-wrapper content-wrapper--fullwidth">
+                            <div class="search-results auction-procedures" id="auction_search_results">
+                                {% for purchase in purchases %}
+                                    <div class="search-results__item">
+                                        <div class="search-results__info">
+                                            <div class="search-results__status status__icon--acceptance" rel="tooltip"
+                                                 title="Прием заявок"></div>
+                                            <div class="search-results__header">
+                                                <div class="search-results__lot">
+                                                    <a href="/b2b/procedure-info/{{ purchase.getId }}"
+                                                       class="search-results__link">
+                                                        {{ purchase.getId }}(Лот 1)
+                                                    </a>
+                                                </div>
+                                                <div class="search-results__section">
+                                                    <p class="search-results__tooltip" rel="tooltip"
+                                                       title="Торговая секция">
+                                                        Росэлторг.Бизнес
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="search-results__subject">
+                                                <a href="/procedure/{{ purchase.getId }}" class="search-results__link">
+                                                    {{ purchase.getName }}
+                                                </a>
+                                            </div>
+                                            <div class="search-results__customer">
+                                                <p class="search-results__tooltip" rel="tooltip" title="Организатор">
+                                                    {{ purchase.getInfo }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="search-results__data ">
+                                            <div class="search-results__data-col search-results__data-col--left">
+                                                <p class="search-results__type">{{ purchase.getCurrentTypeName }}</p> <i
+                                                        class="price__icon "></i>
+                                                <div class="search-results__sum">
+                                                    <p>
+                                                        {{ purchase.getMaxPriceWithSpaces }},<sub>00</sub>
+                                                    </p>
+                                                    <span class="search-results__currency"
+                                                          rel="tooltip" title="">&#8381;
+                                                        <span class="lot-item__nds">без НДС</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="search-results__data-col search-results__data-col--right">
+                                                <div class='"search-results__infoblock search-results__finish-time"'>
+                                                    <p class="search-results__inline-title">Окончание приема заявок:</p>
+                                                    <time class="search-results__time">
+                                                        {{ attribute(purchase.getCloseDateTime, "format", ["Y-m-d H:i"]) }}
+                                                        <p>
+                                                            <span class="search-results__daysqty">
+                                                                <b>({{ purchase.getCloseDateTime|daysUntilClose }})</b>
+                                                            </span>
+                                                        </p>
+                                                    </time>
+                                                </div>
+                                                <div class="search-results__region"><i
+                                                            class="search-results__icon-map"></i>
+                                                    <p class="search-results__tooltip" rel="tooltip"
+                                                       title="Регион заказчика">Регион заказчика</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                                <button class="button button--more pagination__more-link">Показать еще</button>
+                                <nav class="pagination" aria-labelledby="pagination-heading">
+                                    <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+                                    <div class="pagination__items">
+                                        <a class="pagination__link pagination__link--active" href="?page=0"
+                                           title="Текущая страница"> <span class="visually-hidden">
+                Текущая страница
+              </span>1</a>
+                                        <a class="pagination__link" href="?page=1" title="Страница: 2"> <span
+                                                    class="visually-hidden">
+                Page
+              </span>2</a>
+                                        <a class="pagination__link" href="?page=2" title="Страница: 3"> <span
+                                                    class="visually-hidden">
+                Page
+              </span>3</a>
+                                        <a class="pagination__link" href="?page=3" title="Страница: 4"> <span
+                                                    class="visually-hidden">
+                Page
+              </span>4</a>
+                                        <a class="pagination__link" href="?page=4" title="Страница: 5"> <span
+                                                    class="visually-hidden">
+                Page
+              </span>5</a> <span class="pagination__separator" role="presentation">&hellip;</span>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- /Таблица с товарами -->
+
+    </main>
+{% endblock %}
+
+

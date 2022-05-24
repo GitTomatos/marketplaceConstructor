@@ -1,0 +1,264 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <title>Initio - Free, multipurpose html5 template by GetTemplate</title>
+
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="assets/css/menu.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" media="all" href="assets/css/table.css" />
+
+    <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body class="home">
+
+<main id="main">
+
+    <!-- Меню -->
+    <div class="menu">
+        <section>
+            <nav>
+                <ul class="menuItems">
+                    <!--                    <li><a href='#' data-item='Home'>Home</a></li>-->
+                    <!--                    <li><a href='#' data-item='About'>About</a></li>-->
+                    <!--                    <li><a href='#' data-item='Projects'>Projects</a></li>-->
+                    <li><a href='#' data-item='Главная'>Главная</a></li>
+                    <li><a href='#' data-item='Личный кабинет'>Личный кабинет</a></li>
+                </ul>
+            </nav>
+
+        </section>
+    </div>
+
+    <!-- /Меню -->
+    <div class="container">
+
+        <div class="row section featured topspace">
+            <h2 class="section-title"><span>Services</span></h2>
+            <div class="row">
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 1</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 2</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 3</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 4</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 5</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+                <div class="col-sm-2">
+                    <h3 class="text-center">Лот 6</h3>
+                    <p>Краткое описание лота</p>
+                    <p class="text-center"><a href="" class="btn btn-action">Read more</a></p>
+                </div>
+            </div>
+        </div> <!-- / section -->
+
+    </div>	<!-- /container -->
+
+
+
+    <!-- Таблица с товарами -->
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+        <main role="main" class="search-page">
+            <section class="procedures-list">
+                <div class="content-wrapper">
+                    <h1 class="main-header">Все процедуры</h1>
+                    <div data-drupal-messages-fallback class="hidden"></div>
+                    <div class="search-form">
+                        <form class="validate--form" action="/procedures/search_ajax" method="get" id="form_procedures_search">
+                            <div class="search-form__sale" id="search-form__sale">
+                                <div> <span>
+              <label for="sale0" class="active-sale">Все
+                  <input type="radio" id="sale0" name="sale" value="0" checked>
+                </label>
+            </span> <span>
+              <label for="sale1">Закупки
+              <input type="radio" id="sale1" name="sale" value="1"/></label>
+            </span> <span>
+              <label for="sale2">Продажи
+              <input type="radio" id="sale2" name="sale" value="2"/></label>
+            </span> </div>
+                            </div>
+                            <div class="search-form__searchpane">
+                                <div class="search-form__searchfield"> <i class="search-form__icon-search"></i>
+                                    <input class="search-form__keywordinput" name="query_field" type="text" placeholder="Введите ключевое слово" value="">
+                                    <a rel="nofollow" class="search-form__btn-advanced-search" href="#" onclick="ga('send', 'event', 'advancesearch', 'click')"> <i class="search-form__icon-advanced"></i> <span class="search-form__btn-advanced-text">Расширенный<br> поиск</span> </a>
+                                </div>
+                                <div class="search-form__action">
+                                    <button class="button search-form__button-submit js-submit" type="button">Найти</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="content-wrapper content-wrapper--fullwidth">
+                        <div class="search-results auction-procedures" id="auction_search_results">
+                            <div class="search-results__item">
+                                <div class="search-results__info">
+                                    <div class="search-results__status status__icon--acceptance" rel="tooltip" title="Прием заявок"></div>
+                                    <div class="search-results__header">
+                                        <div class="search-results__lot"> <a href="/procedure/B0404222228548" class="search-results__link">B0404222228548
+                                            (Лот 1)</a> </div>
+                                        <div class="search-results__section">
+                                            <p class="search-results__tooltip" rel="tooltip" title="Торговая секция"> Росэлторг.Бизнес</p>
+                                        </div>
+                                    </div>
+                                    <div class="search-results__subject"> <a href="/procedure/B0404222228548" class="search-results__link">КОНСУЛЬТАНТ
+                                        ПЛЮС</a> </div>
+                                    <div class="search-results__customer">
+                                        <p class="search-results__tooltip" rel="tooltip" title="Организатор">Общество с ограниченной ответственностью «Воздушные Ворота Северной Столицы»</p>
+                                    </div>
+                                </div>
+                                <div class="search-results__data ">
+                                    <div class="search-results__data-col search-results__data-col--left">
+                                        <p class="search-results__type">Запрос предложений</p> <i class="price__icon "></i>
+                                        <div class="search-results__sum">
+                                            <p>2 800 000,<sub>00</sub></p> <span class="search-results__currency" rel="tooltip" title="">&#8381;
+                                              <span class="lot-item__nds">без НДС</span> </span>
+                                        </div>
+                                    </div>
+                                    <div class="search-results__data-col search-results__data-col--right">
+                                        <div class='"search-results__infoblock search-results__finish-time"'>
+                                            <p class="search-results__inline-title">Окончание приема заявок:</p>
+                                            <time class="search-results__time">08.04.2022 в 14:30 <span class="search-results__daysqty">(3 дн.)</span> </time>
+                                        </div>
+                                        <div class="search-results__region"> <i class="search-results__icon-map"></i>
+                                            <p class="search-results__tooltip" rel="tooltip" title="Регион заказчика">78 . Санкт-Петербург</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-results__item">
+                                <div class="search-results__info">
+                                    <div class="search-results__status status__icon--acceptance" rel="tooltip" title="Прием заявок"></div>
+                                    <div class="search-results__header">
+                                        <div class="search-results__lot"> <a href="/procedure/0405100000622000001" class="search-results__link">0405100000622000001
+                                            (Лот 1)</a> </div>
+                                        <div class="search-results__msp">
+                                            <p class="search-results__tooltip" rel="tooltip" title="Процедура для субъектов малого и среднего предпринимательства">МСП</p>
+                                        </div>
+                                        <div class="search-results__section">
+                                            <p class="search-results__tooltip" rel="tooltip" title="Торговая секция"> Государственные закупки (44-ФЗ)</p>
+                                        </div>
+                                    </div>
+                                    <div class="search-results__subject"> <a href="/procedure/0405100000622000001" class="search-results__link">Услуги по
+                                        проведению финансового аудита</a> </div>
+                                    <div class="search-results__customer">
+                                        <p class="search-results__tooltip" rel="tooltip" title="Продавец">АКЦИОНЕРНОЕ ОБЩЕСТВО "ПЛЕМЕННОЙ ЗАВОД "УЛАН-ХЕЕЧ"</p>
+                                    </div>
+                                </div>
+                                <div class="search-results__data ">
+                                    <div class="search-results__data-col search-results__data-col--left">
+                                        <p class="search-results__type">Открытый конкурс в электронной форме</p> <i class="price__icon price__icon--drop"></i>
+                                        <div class="search-results__sum">
+                                            <p>70 000,<sub>00</sub></p> <span class="search-results__currency" rel="tooltip" title="">&#8381;
+                                          </span> </div>
+                                    </div>
+                                    <div class="search-results__data-col search-results__data-col--right">
+                                        <div class='"search-results__infoblock search-results__finish-time"'>
+                                            <p class="search-results__inline-title">Окончание приема заявок:</p>
+                                            <time class="search-results__time">20.04.2022 в 09:00 <span class="search-results__daysqty">(15 дн.)</span> </time>
+                                        </div>
+                                        <div class="search-results__region"> <i class="search-results__icon-map"></i>
+                                            <p class="search-results__tooltip" rel="tooltip" title="Регион продавца">08 . Республика Калмыкия</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="search-results__item">
+                                <div class="search-results__info">
+                                    <div class="search-results__status status__icon--acceptance" rel="tooltip" title="Прием заявок"></div>
+                                    <div class="search-results__header">
+                                        <div class="search-results__lot"> <a href="/procedure/0363100000222000088" class="search-results__link">0363100000222000088
+                                            (Лот 1)</a> </div>
+                                        <div class="search-results__section">
+                                            <p class="search-results__tooltip" rel="tooltip" title="Торговая секция"> Государственные закупки (44-ФЗ)</p>
+                                        </div>
+                                    </div>
+                                    <div class="search-results__subject"> <a href="/procedure/0363100000222000088" class="search-results__link">Работы по
+                                        капитальному ремонту помещений и инженерных сетей здания</a> </div>
+                                    <div class="search-results__customer">
+                                        <p class="search-results__tooltip" rel="tooltip" title="Организатор">ФЕДЕРАЛЬНОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ ЗДРАВООХРАНЕНИЯ "МЕДИКО-САНИТАРНАЯ ЧАСТЬ МИНИСТЕРСТВА ВНУТРЕННИХ ДЕЛ РОССИЙСКОЙ ФЕДЕРАЦИИ ПО СМОЛЕНСКОЙ ОБЛАСТИ"</p>
+                                    </div>
+                                </div>
+                                <div class="search-results__data ">
+                                    <div class="search-results__data-col search-results__data-col--left">
+                                        <p class="search-results__type">Открытый аукцион в электронной форме</p> <i class="price__icon price__icon--drop"></i>
+                                        <div class="search-results__sum">
+                                            <p>604 474,<sub>80</sub></p> <span class="search-results__currency" rel="tooltip" title="">&#8381;
+                                          </span> </div>
+                                    </div>
+                                    <div class="search-results__data-col search-results__data-col--right">
+                                        <div class='"search-results__infoblock search-results__finish-time"'>
+                                            <p class="search-results__inline-title">Окончание приема заявок:</p>
+                                            <time class="search-results__time">12.04.2022 в 09:00 <span class="search-results__daysqty">(7 дн.)</span> </time>
+                                        </div>
+                                        <div class="search-results__region"> <i class="search-results__icon-map"></i>
+                                            <p class="search-results__tooltip" rel="tooltip" title="Регион заказчика">67 . Смоленская область</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button button--more pagination__more-link">Показать еще</button>
+                            <nav class="pagination" aria-labelledby="pagination-heading">
+                                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+                                <div class="pagination__items">
+                                    <a class="pagination__link pagination__link--active" href="?page=0" title="Текущая страница"> <span class="visually-hidden">
+                Текущая страница
+              </span>1</a>
+                                    <a class="pagination__link" href="?page=1" title="Страница: 2"> <span class="visually-hidden">
+                Page
+              </span>2</a>
+                                    <a class="pagination__link" href="?page=2" title="Страница: 3"> <span class="visually-hidden">
+                Page
+              </span>3</a>
+                                    <a class="pagination__link" href="?page=3" title="Страница: 4"> <span class="visually-hidden">
+                Page
+              </span>4</a>
+                                    <a class="pagination__link" href="?page=4" title="Страница: 5"> <span class="visually-hidden">
+                Page
+              </span>5</a> <span class="pagination__separator" role="presentation">&hellip;</span>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- /Таблица с товарами -->
+
+</main>
+
+
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/template.js"></script>
+</body>
+</html>

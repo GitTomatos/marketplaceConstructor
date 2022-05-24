@@ -1,0 +1,8 @@
+#Импортируем настройки маппинга для доктрины
+imports:
+    resource: '../marketplaceEngine/doctrine/doctrine_migration_params.yml'
+
+doctrine_migrations:
+    migrations_paths:
+        '%migrations_paths%'
+    enable_profiler: '%kernel.debug%'

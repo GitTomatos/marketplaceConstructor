@@ -1,0 +1,70 @@
+version: '3.5'
+
+services:
+    php-cli:
+        build:
+            context: ./php-cli
+        environment:
+            - APP_ENV=${APP_ENV}
+            - APP_SECRET=${APP_SECRET}
+        volumes:
+            - ../:/app
+
+    ssh:
+        build:
+            context: ./php-cli
+        environment:
+            - APP_ENV=${APP_ENV}
+            - APP_SECRET=${APP_SECRET}
+        volumes:
+            - ../:/app
+
+    php-fpm:
+        build:
+            context: ./php-fpm
+        environment:
+            - APP_ENV=${APP_ENV}
+            - APP_SECRET=${APP_SECRET}
+        volumes:
+            - ../:/app
+
+    nginx:
+        build:
+            context: ./nginx
+        volumes:
+            - ../:/app
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./nginx/sites/:/etc/nginx/sites-available
+            - ./nginx/conf.d/:/etc/nginx/conf.d
+            - ./logs:/var/log
+        depends_on:
+            - php-fpm
+            - database
+        ports:
+            - "90:80"
+
+    database:
+        build:
+            context: ./mysql
+        volumes:
+            - mysql.data:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        ports:
+            - "${MYSQL_PORT}:3306"
+
+    node-cli:
+        tty: true
+        build:
+            context: ./node-cli
+        volumes:
+            - ../:/app
+
+volumes:
+    mysql.data:
+networks:
+    default:
+        name: common

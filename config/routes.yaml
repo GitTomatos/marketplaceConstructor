@@ -1,0 +1,11 @@
+#Импортируем пути до контроллеров модулей
+imports:
+    resource: 'routes/modules/**/*.yml'
+
+controllers:
+    resource: ../src/Application/Controller/
+    type: annotation
+
+kernel:
+    resource: ../src/Application/Kernel.php
+    type: annotation

@@ -1,0 +1,161 @@
+{# https://www.rts-tender.ru/poisk/ #}
+
+{% extends "base.html.twig" %}
+
+
+{% block headData %}
+    <meta charset="UTF-8"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Поиск тендеров и закупок России по регионам и отраслям. Найти тендер быстро.</title>
+{% endblock %}
+
+{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('b2b_another_table') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('b2b_another_table') }}
+{% endblock %}
+
+{% block body %}
+    <div class="layout">
+        <div class="wrapper-main" role="main">
+
+            <div class="main main--ept-links">
+                <div class="b-center">
+                    <div id="content">
+                        <div>
+                            <meta itemprop="name" content="Поставка бумаги для офисной техники для нужд МАОУ «УТЛ»"/>
+                            <div>
+                                <div class="card-item">
+                                    <div class="card-item__about">
+                                        <a href="">
+                                            Закупка №{{ purchase.getId }}
+                                        </a>
+                                    </div>
+                                    <div class="card-item__title">
+                                        {{ purchase.getName }}
+                                    </div>
+                                    <div class="card-item__properties">
+                                        <div class="card-item__properties-cell">
+                                            <div class="card-item__properties-name">НАЧАЛЬНАЯ ЦЕНА</div>
+                                            <div class="card-item__properties-desc" itemprop="price">
+                                                {{ purchase.getMaxPriceWithSpaces }}
+                                                <span>&#8381;</span>
+                                            </div>
+                                            <div class="joint-contract-signing-state"></div>
+                                        </div>
+                                        <div class="card-item__properties-cell">
+                                            <div class="card-item__properties-name">ОБЕСПЕЧЕНИЕ</div>
+                                            <div class="card-item__properties-desc">-</div>
+                                        </div>
+                                        <div class="card-item__properties-cell"></div>
+                                        <div class="card-item__properties-cell">
+                                            <div class="card-item__properties-name">СТАТУС</div>
+                                            <div class="card-item__properties-desc">Прием заявок</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-item__status">
+                                        <div class="card-item__status-progress" style="width:0%"></div>
+                                    </div>
+                                    <div class="card-item__info">
+                                        <div class="card-item__info-main"> Опубликовано:
+                                            <time itemprop="availabilityStarts"
+                                                  datetime="17.04.2022 22:45:07 &#x2B;03:00">
+                                                <b>17 апр. 2022</b> 22:45 мск
+                                            </time>
+                                        </div>
+                                        <div class="card-item__info-aside"> Подать заявку до:
+                                            <time itemprop="availabilityEnds"
+                                                  datetime="20.04.2022 09:00:00 &#x2B;03:00">
+                                                <b>{{ attribute(purchase.getCloseDateTime, "format", ["Y-m-d H:i"]) }}</b>
+                                            </time>
+                                            | <b>{{ purchase.getCloseDateTime|daysUntilClose }} </b></div>
+                                    </div>
+                                    <div class="card-content__row parent">
+                                        <div class="table-wrapper">
+                                            <table class="card-table">
+                                                <tr>
+                                                    <th>Позиция</th>
+                                                    <th>Кол-во</th>
+                                                    <th>Ед. изм.</th>
+                                                </tr>
+                                                <tr>
+                                                    <td> 1. Бумага для офисной техники белая</td>
+                                                    <td> 50</td>
+                                                    <td> пач</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="card-item__files"></div>
+                                    <div class="card-item__organization">
+                                        <div class="card-item__organization-title">ОРГАНИЗАТОР</div>
+                                        <div class="card-item__organization-main">
+                                            <p><a class="text--bold" target="_blank"
+                                                  href="">
+                                                    МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ &quot;УХТИНСКИЙ
+                                                    ТЕХНИЧЕСКИЙ ЛИЦЕЙ ИМ. Г.В. РАССОХИНА&quot;
+                                                    <span class="show_statistic_organizer">(все закупки)</span>
+                                                </a></p>
+                                            <p><b>ИНН </b>1102006571, <b>КПП </b>110201001.</p>
+                                            <p><span class="text--bold">Контактные данные: </span>
+                                            </p>
+                                            <p></p>
+                                        </div>
+                                    </div>
+{#                                    <div class="card-content__row parent">#}
+{#                                        <div class="card-item__organization">#}
+{#                                            <div class="card-item__organization-title">ЗАКАЗЧИК</div>#}
+{#                                            <div itemprop="description">#}
+{#                                                <div class="card-item__organization-main">#}
+{#                                                    <p>#}
+{#                                                        <span class="text--bold">МУНИЦИПАЛЬНОЕ АВТОНОМНОЕ ОБЩЕОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ &quot;УХТИНСКИЙ ТЕХНИЧЕСКИЙ ЛИЦЕЙ ИМ. Г.В. РАССОХИНА&quot;#}
+{#                                                        </span>#}
+{#                                                    </p>#}
+{#                                                    <p>#}
+{#                                                        <b>ИНН </b>1102006571, <b>КПП </b>110201001.#}
+{#                                                        <span class="text--bold">Регион: </span>#}
+{#                                                        <a href="">Республика Коми</a>#}
+{#                                                    </p>#}
+{#                                                    <p>#}
+{#                                                        <span class="text--bold">Контактные данные: </span>#}
+{#                                                    </p>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                            <div class="content-address">#}
+{#                                                <span class="content-address__title">#}
+{#                                                    <span class="icon-map"></span>#}
+{#                                                </span>#}
+{#                                                <span class="text--strong">Адрес поставки:</span>#}
+{#                                                <span>169319, Республика Коми, г. Ухта, проезд Строителей, д. 25</span>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigate-pages">
+                        <div class="navigate-pages__main">
+                            <div class="pagination">
+                                <ul id="pager" class="light-theme simple-pagination">
+                                    <li class="disabled"><span class="current prev">&lt;</span></li>
+                                    <li class="active"><span class="current">1</span></li>
+                                    <li><a href="?page=2" class="page-link">2</a></li>
+                                    <li><a href="?page=3" class="page-link">3</a></li>
+                                    <li><a href="?page=4" class="page-link">4</a></li>
+                                    <li><a href="?page=5" class="page-link">5</a></li>
+                                    <li><a href="?page=2" class="page-link next">&gt;</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

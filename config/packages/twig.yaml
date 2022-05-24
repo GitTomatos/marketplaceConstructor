@@ -1,0 +1,8 @@
+twig:
+    default_path: '%kernel.project_dir%/templates/downloaded'
+    paths:
+        '%kernel.project_dir%/templates/personal': 'personal'
+
+when@test:
+    twig:
+        strict_variables: true
